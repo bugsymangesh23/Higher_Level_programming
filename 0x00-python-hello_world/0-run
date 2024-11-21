@@ -1,4 +1,16 @@
 #!/bin/bash
 
-chmod 755 $PYFILE
-./$PYFILE
+# First attempt
+#chmod 755 $PYFILE
+#./$PYFILE
+
+# Better way with some error handling
+
+#check if environment variable is set
+if [ -z "$PYFILE" ]; then
+	echo "Error: PYFILE environment variable is not set."
+	exit 1
+fi
+
+# run script
+python3 $PYFILE
