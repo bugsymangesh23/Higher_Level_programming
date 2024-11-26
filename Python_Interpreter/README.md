@@ -7,7 +7,7 @@ The interpreter that comes with python is written in C language CPython. The int
 
 ## Disadvantage
 
-> 1. Speed of runnning code is compromised. Which is not an issue since it's an exercise to help understand python
+> 1. Speed of runnning code is compromised. Which is not an issue since this project serves as  an exercise to aid one understand how Python is translated to machine code.
 
 
  For more info about the project visit: [Python interpreter written in python](https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html)
