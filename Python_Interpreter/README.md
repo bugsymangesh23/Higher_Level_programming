@@ -2,6 +2,10 @@
 
 The interpreter that comes with python is written in C language CPython. The interpreter in this repo is written and implimented in the python language.
 
+Here is a simple diagram showing how the Python interpreter works
+
+![Python interpreter diagram](https://excalidraw.com/#json=KcrocohiXH1gr3JqR6wsL,CkwCihYYtDnEol8dCeRQdg!)
+
 ## Advantages of implimenting the interpreter in Python
 ```
 1. Python is easier to impliment .
