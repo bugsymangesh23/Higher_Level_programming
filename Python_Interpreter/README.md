@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 #  Python Interpreter in Python
-=======
-# Python Interpreter in Python language.
->>>>>>> f1d5238b63b601a86f8bc0a81ebe77a7ccde0ebf
 
+# Python Interpreter in Python language.
 The interpreter that comes with python is written in C language (CPython). The interpreter in this repo is written and implimented in the python language.
 
 ## Advantages of implimenting the interpreter in Python
