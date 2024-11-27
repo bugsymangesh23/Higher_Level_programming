@@ -1,4 +1,4 @@
-# Python Interpreter in Python
+#  Python Interpreter in Python
 
 The interpreter that comes with python is written in C language (CPython). The interpreter in this repo is written and implimented in the python language.
 
