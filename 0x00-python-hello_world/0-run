@@ -7,10 +7,4 @@
 # Better way with some error handling
 
 #check if environment variable is set
-if [ -z "$PYFILE" ]; then
-	echo "Error: PYFILE environment variable is not set."
-	exit 1
-fi
-
-# run script
-python3 $PYFILE
+[ -z "&PYFILE" ] && { ECHO "Error: PYFILE environment variable is not set."; exit 1; } || python3 "&PYFILE"
