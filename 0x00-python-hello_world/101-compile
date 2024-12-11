@@ -1,2 +1,20 @@
-#!/usr/bin/bash
-python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
+#!/bin/bash
+
+# Check if the PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: The environment variable PYFILE is not set." >&2
+    exit 1
+fi
+
+# Compile the Python file
+echo "Compiling $PYFILE ..."
+python3 -m py_compile "$PYFILE"
+
+# Check if the compilation was successful
+if [ $? -eq 0 ]; then
+    echo "Compilation successful: ${PYFILE}c"
+else
+    echo "Compilation failed." >&2
+    exit 1
+fi
+
