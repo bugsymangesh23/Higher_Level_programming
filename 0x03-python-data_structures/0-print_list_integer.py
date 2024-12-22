@@ -8,4 +8,7 @@ You can assume that the list only contains integers
 You are not allowed to cast integers into strings
 You have to use str.format() to print integers
 '''
-
+#!/usr/bin/python3
+def print_list_integer(my_list=[]):
+    for i in my_list:
+        print("{:d}".format(i))
