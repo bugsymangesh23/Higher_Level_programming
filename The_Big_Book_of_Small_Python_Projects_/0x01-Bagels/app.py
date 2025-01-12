@@ -21,3 +21,9 @@ Pico One digit is correct but in the wrong position.
 Fermi One digit is correct and in the right position.
 Bagels No digit is correct.For example, if the secret number was 248 and your guess was 843, the
 clues would be Fermi Pico.'''.format(NUM_DIGITS))
+
+# The main game loop
+    while True:
+        secret_num = getSecretNum() #stores secret number that player is to get
+        print("I have thought of a number...")
+        print(f"You have {MAX_GUESSES} attempts to get it.")
