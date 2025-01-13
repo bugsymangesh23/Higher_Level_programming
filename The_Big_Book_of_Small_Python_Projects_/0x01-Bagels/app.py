@@ -27,3 +27,19 @@ clues would be Fermi Pico.'''.format(NUM_DIGITS))
         secret_num = getSecretNum() #stores secret number that player is to get
         print("I have thought of a number...")
         print(f"You have {MAX_GUESSES} attempts to get it.")
+        numGuesses = 1
+    while numGuesses <= MAX_GUESSES:
+        guess = ''
+# Keep looping until they enter a valid guess:
+    while len(guess) != NUM_DIGITS or not guess.isdecimal():
+        print('Guess #{}: '.format(numGuesses))
+        guess = input('> ')
+
+        clues = getClues(guess, secretNum)
+        print(clues)
+numGuesses += 1
+if guess == secretNum:
+break # They're correct, so break out of this loop.
+if numGuesses > MAX_GUESSES:
+print('You ran out of guesses.')
+print('The answer was {}.'.format(secretNum))
