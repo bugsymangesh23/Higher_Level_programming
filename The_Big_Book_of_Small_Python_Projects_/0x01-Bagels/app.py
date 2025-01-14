@@ -39,23 +39,14 @@ clues would be Fermi Pico.'''.format(NUM_DIGITS))
         print(clues)
 numGuesses += 1
 if guess == secretNum:
-break # They're correct, so break out of this loop.
+    break # They're correct, so break out of this loop.
 if numGuesses > MAX_GUESSES:
 print('You ran out of guesses.')
 print('The answer was {}.'.format(secretNum))
 
-# Ask player if they want to play again.
-    def getSecretNum():
-    """Returns a string made up of NUM_DIGITS unique random digits."""
-    numbers = list('0123456789') # Create a list of digits 0 to 9
-    random.shuffle(numbers) # Shuffle them into random order.
-
-    # Get the first NUM_DIGITS digits in the list for the secret number:
-    Project #1
-    secretNum = ''
-    for i in range(NUM_DIGITS):
-    secretNum += str(numbers[i])
-    return secretNumprint('Do you want to play again? (yes or no)')
-    if not input('> ').lower().startswith('y'):
+# Ask player if they want to play again. 
+print('Do you wish to play again?(Yes or No)')
+if not input('> ').lower().startswith('y'):
     break
-    print('Thanks for playing!')
+print('Thanks for playing!')
+
