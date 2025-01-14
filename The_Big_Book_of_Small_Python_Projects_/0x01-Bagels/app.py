@@ -28,21 +28,23 @@ clues would be Fermi Pico.'''.format(NUM_DIGITS))
         print("I have thought of a number...")
         print(f"You have {MAX_GUESSES} attempts to get it.")
         numGuesses = 1
-    while numGuesses <= MAX_GUESSES:
-        guess = ''
+        
+        while numGuesses <= MAX_GUESSES:
+            guess = ''
 # Keep looping until they enter a valid guess:
-    while len(guess) != NUM_DIGITS or not guess.isdecimal():
-        print('Guess #{}: '.format(numGuesses))
-        guess = input('> ')
+            while len(guess) != NUM_DIGITS or not guess.isdecimal():
+                print('Guess #{}: '.format(numGuesses))
+                guess = input('> ')
 
-        clues = getClues(guess, secretNum)
-        print(clues)
-numGuesses += 1
-if guess == secretNum:
-    break # They're correct, so break out of this loop.
-if numGuesses > MAX_GUESSES:
-print('You ran out of guesses.')
-print('The answer was {}.'.format(secretNum))
+            if guess == secret_num:
+                print('Congratulations!You guessed it right')
+                break # They're correct, so break out of this loop.
+    
+    clues = getClues(guess, secret_num)
+    print(clues)
+    if numGuesses > MAX_GUESSES:
+        print('You ran out of guesses.')
+        print('The answer was {}.'.format(secret_num))
 
 # Ask player if they want to play again. 
 print('Do you wish to play again?(Yes or No)')
@@ -60,3 +62,26 @@ def getSecretNum():
     for i in range(NUM_DIGITS):
         secretNum +=(numbers[i])
     return secretNum
+
+# Clues definition 
+def getClues(guess, secretNum):
+    if guess == secretNum:
+        return 'You got it!'
+
+    clues = []
+
+    for i in range(len(guess)):
+        if guess[i] == secretNum[i]:
+            clues.append('Fermi')
+        elif guess[i] in secretNum:
+            clues.append('Pico')
+    if len(clues) == 0:
+        return 'Bagels' #No correct digits at all
+    else:
+        # sort clues into alphabetic order so that their order 
+        # dont give info away
+        clues.sort()
+        # make a single string from the clues string
+        return ''.join(clues)
+    if __name__ == '__main__':
+        main()
