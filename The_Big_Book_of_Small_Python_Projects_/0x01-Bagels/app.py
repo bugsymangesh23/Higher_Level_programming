@@ -50,3 +50,13 @@ if not input('> ').lower().startswith('y'):
     break
 print('Thanks for playing!')
 
+# Random string for the guesses
+def getSecretNum():
+    numbers = list('0123456789') #list of digits 0-9
+    random.shuffle(numbers) # shuffle numbers in random order
+
+    # Get the first NUM_DIGITS digits in the list for the secret number:
+    secretNum = ''
+    for i in range(NUM_DIGITS):
+        secretNum +=(numbers[i])
+    return secretNum
